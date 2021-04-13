@@ -40,4 +40,4 @@ repos:
   - hooks:
       - id: sops-encrypted-check
     repo: https://github.com/k8s-at-home/sops-pre-commit
-    rev: v1.0.0
+    rev: v1.1.0
