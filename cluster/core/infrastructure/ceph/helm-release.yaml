@@ -57,7 +57,7 @@ spec:
     plugin:
       image:
         repository: quay.io/cephcsi/cephcsi
-        tag: v3.2.1
+        tag: v3.3.0
         pullPolicy: IfNotPresent
     provisioner:
       name: provisioner
