@@ -24,7 +24,7 @@ repos:
       - id: remove-crlf
       - id: remove-tabs
     repo: https://github.com/Lucas-C/pre-commit-hooks
-    rev: v1.1.9
+    rev: v1.1.10
   - hooks:
       - additional_dependencies: []
         args:
