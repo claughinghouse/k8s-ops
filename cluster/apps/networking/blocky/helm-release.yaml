@@ -18,22 +18,41 @@ spec:
       interval: 5m
   values:
     image:
-      repository: spx01/blocky
+      repository: ghcr.io/0xerr0r/blocky
       tag: v0.14
     env:
       TZ: "America/New_York"
     replicas: 3
+    service:
+      port:
+        port: 4000
+      additionalServices:
+        - enabled: true
+          nameSuffix: dns
+          type: LoadBalancer
+          externalIPs:
+            - "${CLUSTER_LB_BLOCKY}"
+          port:
+            port: 53
+            name: dns-tcp
+            protocol: TCP
+            targetPort: 53
+          additionalPorts:
+            - port: 53
+              name: dns-udp
+              protocol: UDP
+              targetPort: 53
+          externalTrafficPolicy: Local
     config: |
       upstream:
         externalResolvers:
-        - tcp-tls:1.1.1.1:853
         - tcp-tls:1.0.0.1:853
+        - tcp-tls:1.1.1.1:853
         - tcp-tls:8.8.8.8:853
         - tcp-tls:8.8.4.4:853
       conditional:
         mapping:
-          # CoreDNS IP
-          ${SECRET_CLUSTER_DOMAIN}: udp:192.168.69.180
+          ${SECRET_CLUSTER_DOMAIN}: udp:${CLUSTER_LB_COREDNS}
       blocking:
         blackLists:
           ads:
@@ -46,38 +65,12 @@ spec:
           default:
           - ads
       clientLookup:
-        upstream: udp:10.1.6.1
+        upstream: udp:${GATEWAY_IP}
       prometheus:
         enable: true
         path: /metrics
       httpPort: 4000
       logLevel: info
-    service:
-      port:
-        port: 4000
-      additionalServices:
-      - enabled: true
-        nameSuffix: dns-tcp
-        type: LoadBalancer
-        externalIPs:
-        - "${CLUSTER_LB_BLOCKY}"
-        port:
-          port: 53
-          name: dns-tcp
-          protocol: TCP
-          targetPort: 53
-        externalTrafficPolicy: Local
-      - enabled: true
-        nameSuffix: dns-udp
-        type: LoadBalancer
-        externalIPs:
-        - "${CLUSTER_LB_BLOCKY}"
-        port:
-          port: 53
-          name: dns-udp
-          protocol: UDP
-          targetPort: 53
-        externalTrafficPolicy: Local
     prometheus:
       serviceMonitor:
         enabled: true
@@ -86,13 +79,13 @@ spec:
     affinity:
       podAntiAffinity:
         requiredDuringSchedulingIgnoredDuringExecution:
-        - labelSelector:
-            matchExpressions:
-            - key: app.kubernetes.io/name
-              operator: In
-              values:
-              - blocky
-          topologyKey: "kubernetes.io/hostname"
+          - labelSelector:
+              matchExpressions:
+                - key: app.kubernetes.io/name
+                  operator: In
+                  values:
+                    - blocky
+            topologyKey: "kubernetes.io/hostname"
     resources:
       requests:
         memory: 100Mi
