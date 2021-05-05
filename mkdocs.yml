@@ -82,11 +82,12 @@ markdown_extensions:
       permalink: true
   - pymdownx.superfences:
       highlight_code: true
+  - pymdownx.highlight:
+      linenums: true
   - pymdownx.tabbed
   - pymdownx.tilde
   - pymdownx.progressbar
   - pymdownx.tasklist
-  - pymdownx.superfences
   - pymdownx.snippets
   - pymdownx.emoji:
       emoji_index: !!python/name:materialx.emoji.twemoji
@@ -95,7 +96,7 @@ markdown_extensions:
 nav:
   - Introduction: index.md
   - Core Concepts: core-concepts/index.md
-  - Get Started:
+  - Getting Started:
       - Environment: get-started/environment.md
       - Ansible: get-started/ansible.md
       - Direnv: get-started/direnv.md
@@ -111,4 +112,5 @@ nav:
       - Pre-commit: get-started/pre-commit.md
       - Shellcheck: get-started/shellcheck.md
       - SOPS: get-started/sops.md
+      - VS Code: get-started/vs-code.md
       - Yamllint: get-started/yamllint.md

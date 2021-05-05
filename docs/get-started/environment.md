@@ -1,6 +1,9 @@
 # Environment
 
-In order to get started we need a few packages installed and setup. This guide assumes that [HomeBrew][brew] is already installed.
+In order to get started we need a few packages installed and setup. This guide assumes that [HomeBrew][brew] is already installed and you are working from a macOS machine. These packages and steps may need to be adapted slightly for your environment.
+
+!!! warning
+    As with any guide on the internet these packages and steps may need to be adapted slightly for your environment.
 
 Using [HomeBrew][brew] on MacOS install the following packages:
 
@@ -89,26 +92,37 @@ brew install shellcheck
 brew install go-task/tap/go-task
 ```
 
+## [VS Code][vs-code]
+
+<!-- # TODO https://code.visualstudio.com/Download -->
+### TODO
+
 ## [Yamllint][yamllint]
 
 ```bash
 brew install yamllint
 ```
 
-[ansible]: https://www.ansible.com/
-[brew]: https://brew.sh/
-[direnv]: https://direnv.net/
-[docker]: https://www.docker.com/
-[flux]: https://toolkit.fluxcd.io/get-started/
-[git]: https://git-scm.com/
-[go]: https://golang.org/
-[helm]: https://helm.sh/
-[jq]: https://stedolan.github.io/jq/
-[kubectl]: https://kubernetes.io/
-[kubetail]: https://github.com/johanhaleby/kubetail
-[mozilla-sops]: https://github.com/mozilla/sops
-[pre-commit]: https://pre-commit.com/
-[shellcheck]: https://www.shellcheck.net/
-[go-task]: https://taskfile.dev/
-[velero]: https://velero.io/
-[yamllint]: https://github.com/adrienverge/yamllint
+---
+
+# Next Steps
+
+If everything above went well, move to the next section using the navigation at the bottom of the page.
+
+[ansible]: ansible.md
+[brew]: https://brew.sh
+[direnv]: direnv.md
+[docker]: docker.md
+[flux]: fluxv2.md
+[git]: git.md
+[go]: go.md
+[helm]: helm.md
+[jq]: jq.md
+[kubectl]: kubectl.md
+[kubetail]: kubetail.md
+[mozilla-sops]: sops.md
+[pre-commit]: pre-commit.md
+[shellcheck]: shellcheck.md
+[go-task]: go-task.md
+[vs-code]: vs-code.md
+[yamllint]: yamllint.md
