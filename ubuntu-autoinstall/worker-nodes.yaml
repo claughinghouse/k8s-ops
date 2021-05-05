@@ -47,5 +47,10 @@ autoinstall:
     # Ansible
     - "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIJHiKbjWHf/hfmD5ArZek3BnKaLf56L3dBqovisvlABw"
   install-server: true
+  growpart:
+    mode: auto
+    devices: ["/"]
   late-commands:
+    - 'echo "ubuntu ALL=(ALL:ALL) NOPASSWD:ALL" > /target/etc/sudoers.d/ubuntu'
+    - chmod 440 /target/etc/sudoers.d/ubuntu
     - shutdown -h now
