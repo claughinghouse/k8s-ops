@@ -36,7 +36,7 @@ spec:
       postgresqlDatabase: teslamate
       image:
         repository: postgres
-        tag: 12.1
+        tag: 12.6
       postgresqlDataDir: "/data/pgdata"
       persistence:
         enabled: true
