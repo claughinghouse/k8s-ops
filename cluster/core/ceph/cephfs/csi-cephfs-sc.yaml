@@ -16,5 +16,3 @@ parameters:
   csi.storage.k8s.io/node-stage-secret-namespace: ceph
 reclaimPolicy: Delete
 allowVolumeExpansion: true
-mountOptions:
-  - debug
