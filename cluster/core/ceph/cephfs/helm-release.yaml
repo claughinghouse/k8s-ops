@@ -2,7 +2,7 @@
 apiVersion: helm.toolkit.fluxcd.io/v2beta1
 kind: HelmRelease
 metadata:
-  name: ceph-rbd
+  name: ceph-cephfs
   namespace: ceph
 spec:
   interval: 5m
