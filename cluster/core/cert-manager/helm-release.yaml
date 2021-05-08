@@ -16,7 +16,7 @@ spec:
         name: jetstack-charts
         namespace: flux-system
       interval: 5m
-  timeout: 20m
+  timeout: 30m
   values:
     installCRDs: false
     webhook:

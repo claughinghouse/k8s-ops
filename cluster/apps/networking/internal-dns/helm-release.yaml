@@ -16,6 +16,7 @@ spec:
         name: bitnami-charts
         namespace: flux-system
       interval: 5m
+  timeout: 30m
   values:
     nameOverride: internal-dns
     # interval: "5m"
