@@ -4,4 +4,4 @@ kind: Kustomization
 resources:
 # - teslamate
 - home-assistant
-- syncthing
+# - syncthing
