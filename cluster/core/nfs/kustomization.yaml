@@ -2,8 +2,4 @@
 apiVersion: kustomize.config.k8s.io/v1beta1
 kind: Kustomization
 resources:
-- namespaces
-- cert-manager
-- ceph
-- system-upgrade
-- nfs
+- nfs-pvc.yaml
