@@ -18,24 +18,11 @@ spec:
       interval: 5m
   timeout: 30m
   values:
-    # annotations:
-    #   configmap.reloader.stakater.com/reload: "syncthing-config-xml"
-    # env:
-    #   CONFIG: "/etc/config.xml"
-    #   DATA: "/var/syncthing"
     persistence:
       config:
         enabled: true
         existingClaim: syncthing-v1
         mountPath: /var/syncthing
-    # volumeMounts:
-    #   - name: syncthing-config-xml
-    #     mountPath: "/etc/config.xml"
-    #     subPath: config.xml
-    # volumes:
-    #   - name: syncthing-config-xml
-    #     configMap:
-    #       name: syncthing-config-xml
     ingress:
       enabled: true
       ingressClassName: "traefik"
