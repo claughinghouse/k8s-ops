@@ -25,13 +25,13 @@ spec:
         enabled: true
         existingClaim: syncthing-v1
         mountPath: /var/syncthing
-    volumeMounts:
-      - name: syncthing-config-xml
-        mountPath: "/var/syncthing/config/config.xml"
-    volumes:
-      - name: syncthing-config-xml
-        configMap:
-          name: syncthing-config-xml
+    # volumeMounts:
+    #   - name: syncthing-config-xml
+    #     mountPath: "/var/syncthing/config/config.xml"
+    # volumes:
+    #   - name: syncthing-config-xml
+    #     configMap:
+    #       name: syncthing-config-xml
     ingress:
       enabled: true
       ingressClassName: "traefik"
