@@ -6,4 +6,4 @@ resources:
 - cert-manager
 - ceph
 - system-upgrade
-- nfs
+# - nfs
