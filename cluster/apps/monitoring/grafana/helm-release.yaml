@@ -127,10 +127,10 @@ spec:
           url: https://raw.githubusercontent.com/ceph/ceph/master/monitoring/grafana/dashboards/cephfs-overview.json
           datasource: Prometheus
         host-details:
-          url: https://github.com/ceph/ceph/raw/master/monitoring/grafana/dashboards/host-details.json
+          url: https://raw.githubusercontent.com/ceph/ceph/master/monitoring/grafana/dashboards/host-details.json
           datasource: Prometheus
         hosts-overview:
-          url: https://raw.githubusercontent.com/ceph/ceph/master/monitoring/grafana/dashboards/host-details.json
+          url: https://raw.githubusercontent.com/ceph/ceph/master/monitoring/grafana/dashboards/hosts-overview.json
           datasource: Prometheus
         osd-device-details:
           url: https://raw.githubusercontent.com/ceph/ceph/master/monitoring/grafana/dashboards/osd-device-details.json
