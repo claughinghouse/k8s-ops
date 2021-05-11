@@ -121,43 +121,43 @@ spec:
           url: https://raw.githubusercontent.com/k8s-at-home/grafana-dashboards/main/sonarr.json
           datasource: Prometheus
         ceph-cluster:
-          url: https://github.com/ceph/ceph/raw/master/monitoring/grafana/dashboards/ceph-cluster.json
+          url: https://raw.githubusercontent.com/ceph/ceph/master/monitoring/grafana/dashboards/ceph-cluster.json
           datasource: Prometheus
         cephfs-overview:
-          url: https://github.com/ceph/ceph/raw/master/monitoring/grafana/dashboards/cephfs-overview.json
+          url: https://raw.githubusercontent.com/ceph/ceph/master/monitoring/grafana/dashboards/cephfs-overview.json
           datasource: Prometheus
         host-details:
           url: https://github.com/ceph/ceph/raw/master/monitoring/grafana/dashboards/host-details.json
           datasource: Prometheus
         hosts-overview:
-          url: https://github.com/ceph/ceph/raw/master/monitoring/grafana/dashboards/hosts-overview.json
+          url: https://raw.githubusercontent.com/ceph/ceph/master/monitoring/grafana/dashboards/host-details.json
           datasource: Prometheus
         osd-device-details:
-          url: https://github.com/ceph/ceph/raw/master/monitoring/grafana/dashboards/osd-device-details.json
+          url: https://raw.githubusercontent.com/ceph/ceph/master/monitoring/grafana/dashboards/osd-device-details.json
           datasource: Prometheus
         osds-overview:
-          url: https://github.com/ceph/ceph/raw/master/monitoring/grafana/dashboards/osds-overview.json
+          url: https://raw.githubusercontent.com/ceph/ceph/master/monitoring/grafana/dashboards/osds-overview.json
           datasource: Prometheus
         pool-detail:
-          url: https://github.com/ceph/ceph/raw/master/monitoring/grafana/dashboards/pool-detail.json
+          url: https://raw.githubusercontent.com/ceph/ceph/master/monitoring/grafana/dashboards/pool-detail.json
           datasource: Prometheus
         pool-overview:
-          url: https://github.com/ceph/ceph/raw/master/monitoring/grafana/dashboards/pool-overview.json
+          url: https://raw.githubusercontent.com/ceph/ceph/master/monitoring/grafana/dashboards/pool-overview.json
           datasource: Prometheus
         radosgw-detail:
-          url: https://github.com/ceph/ceph/raw/master/monitoring/grafana/dashboards/radosgw-detail.json
+          url: https://raw.githubusercontent.com/ceph/ceph/master/monitoring/grafana/dashboards/radosgw-detail.json
           datasource: Prometheus
         radosgw-overview:
-          url: https://github.com/ceph/ceph/raw/master/monitoring/grafana/dashboards/radosgw-overview.json
+          url: https://raw.githubusercontent.com/ceph/ceph/master/monitoring/grafana/dashboards/radosgw-overview.json
           datasource: Prometheus
         radosgw-sync-overview:
-          url: https://github.com/ceph/ceph/raw/master/monitoring/grafana/dashboards/radosgw-sync-overview.json
+          url: https://raw.githubusercontent.com/ceph/ceph/master/monitoring/grafana/dashboards/radosgw-sync-overview.json
           datasource: Prometheus
         rbd-details:
-          url: https://github.com/ceph/ceph/raw/master/monitoring/grafana/dashboards/rbd-details.json
+          url: https://raw.githubusercontent.com/ceph/ceph/master/monitoring/grafana/dashboards/rbd-details.json
           datasource: Prometheus
         rbd-overview:
-          url: https://github.com/ceph/ceph/raw/master/monitoring/grafana/dashboards/rbd-overview.json
+          url: https://raw.githubusercontent.com/ceph/ceph/master/monitoring/grafana/dashboards/rbd-overview.json
           datasource: Prometheus
     sidecar:
       dashboards:
