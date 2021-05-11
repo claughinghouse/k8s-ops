@@ -23,14 +23,15 @@ spec:
       create: true
     service:
       type: LoadBalancer
-      loadBalancerIP: "${CLUSTER_LB_VERNEMQ_IP}"
+      externalIPs:
+        - "${CLUSTER_LB_VERNEMQ_IP}"
       ws:
         enabled: true
       mqtt:
         enabled: true
     additionalEnv:
-    - name: DOCKER_VERNEMQ_ACCEPT_EULA
-      value: "yes"
-    - name: DOCKER_VERNEMQ_ALLOW_ANONYMOUS
-      value: "on"
+      - name: DOCKER_VERNEMQ_ACCEPT_EULA
+        value: "yes"
+      - name: DOCKER_VERNEMQ_ALLOW_ANONYMOUS
+        value: "on"
     podAntiAffinity: hard
