@@ -20,7 +20,7 @@ spec:
   values:
     image:
       repository: ghcr.io/home-assistant/home-assistant
-      tag: 2021.5.1
+      tag: 2021.5.2
     env:
       TZ: "America/New_York"
     envFrom:
@@ -66,7 +66,7 @@ spec:
         enabled: true
         image:
           repository: codercom/code-server
-          tag: 3.9.3
+          tag: 3.10.0
         git:
           deployKeySecret: code-server
         workingDir: "/config"
