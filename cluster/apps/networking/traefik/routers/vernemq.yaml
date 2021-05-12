@@ -1,0 +1,19 @@
+---
+apiVersion: traefik.containo.us/v1alpha1
+kind: IngressRouteTCP
+metadata:
+  name: vernemq
+  namespace: networking
+spec:
+  entryPoints:
+  - mqtt
+  routes:
+  - match: HostSNI("mqtt.${SECRET_CLUSTER_DOMAIN}")
+    services:
+    - name: mosquitto
+      port: 8883
+  tls:
+    passthrough: false
+    options:
+      name: default
+      namespace: mosquitto
