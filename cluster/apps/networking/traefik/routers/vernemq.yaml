@@ -11,7 +11,7 @@ spec:
   - match: HostSNI("mqtt.${SECRET_CLUSTER_DOMAIN}")
     services:
     - name: vernemq
-      port: 8883
+      port: 1883
   tls:
     passthrough: false
     options:
