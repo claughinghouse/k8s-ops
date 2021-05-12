@@ -48,3 +48,6 @@ spec:
           paths:
             - path: /
               pathType: Prefix
+      tls:
+        - hosts:
+            - "mqtt.${SECRET_CLUSTER_DOMAIN}"
