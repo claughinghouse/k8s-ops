@@ -7,13 +7,5 @@ metadata:
 spec:
   entryPoints:
   - mqtt
-  routes:
-  - match: HostSNI("mqtt.${SECRET_CLUSTER_DOMAIN}")
-    services:
-    - name: vernemq
-      port: 1883
-  tls:
-    passthrough: false
-    options:
-      name: vernemq
-      namespace: home
+  rule: "HostSNI(`mqtt.${SECRET_CLUSTER_DOMAIN}`)"
+  service: vernemq
