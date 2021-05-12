@@ -10,7 +10,7 @@ spec:
   routes:
   - match: HostSNI("mqtt.${SECRET_CLUSTER_DOMAIN}")
     services:
-    - name: mosquitto
+    - name: vernemq
       port: 8883
   tls:
     passthrough: false
