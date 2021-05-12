@@ -65,6 +65,9 @@ spec:
         tls:
           enabled: true
           options: "default"
+      mqtt:
+        port: 8883
+        protocol: TCP
       metrics:
         port: 8082
         expose: true
