@@ -7,4 +7,3 @@ resources:
 - tls-store
 - dashboard
 - middlewares
-- routers
