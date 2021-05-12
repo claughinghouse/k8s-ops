@@ -68,6 +68,8 @@ spec:
       mqtt:
         port: 8883
         protocol: TCP
+        expose: true
+        exposedPort: 8883
       metrics:
         port: 8082
         expose: true
