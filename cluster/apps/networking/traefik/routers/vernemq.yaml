@@ -15,5 +15,5 @@ spec:
   tls:
     passthrough: false
     options:
-      name: default
-      namespace: mosquitto
+      name: vernemq
+      namespace: home
