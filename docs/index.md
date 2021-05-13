@@ -1,4 +1,4 @@
-# K8s-ops Home Cluster
+# K8s Home Cluster
 
 !!! note "Work in progress"
     This repo is a work in progress.
