@@ -9,7 +9,7 @@ resources:
 - home
 - kasten-io
 - kube-system
+- media
 - monitoring
 - networking
 - system-upgrade
-# - media
