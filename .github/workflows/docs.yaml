@@ -1,5 +1,5 @@
 ---
-name: Build and deploy docs
+name: Build Docs
 
 on:
   push:
