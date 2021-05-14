@@ -3,7 +3,9 @@ apiVersion: kustomize.config.k8s.io/v1beta1
 kind: Kustomization
 resources:
 - calico-system.yaml
+- ceph.yaml
 - cert-manager.yaml
+- dev.yaml
 - falco-system.yaml
 - flux-system.yaml
 - home.yaml
@@ -12,4 +14,3 @@ resources:
 - media.yaml
 - monitoring.yaml
 - networking.yaml
-- ceph.yaml
