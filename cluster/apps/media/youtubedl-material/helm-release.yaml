@@ -49,4 +49,4 @@ spec:
       video:
         enabled: true
         existingClaim: youtubedl-material-video
-        mountPath: /video
+        mountPath: /app/video
