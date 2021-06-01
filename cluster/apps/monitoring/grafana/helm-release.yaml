@@ -16,7 +16,6 @@ spec:
         name: grafana-charts
         namespace: flux-system
       interval: 5m
-  timeout: 30m
   values:
     deploymentStrategy:
       type: Recreate
@@ -28,7 +27,7 @@ spec:
     adminPassword: "${SECRET_GRAFANA_PASSWORD}"
     grafana.ini:
       server:
-        root_url: "https://grafana.${SECRET_CLUSTER_DOMAIN}"
+        root_url: "https://grafana.${SECRET_DOMAIN}"
       paths:
         data: /var/lib/grafana/data
         logs: /var/log/grafana
@@ -74,7 +73,16 @@ spec:
           gnetId: 12175
           revision: 5
           datasource: Prometheus
-        # Ref: https://grafana.com/grafana/dashboards/11315
+        # Ref: https://grafana.com/grafana/dashboards/5336
+        ceph-osd:
+          gnetId: 5336
+          revision: 5
+          datasource: Prometheus
+        # Ref: https://grafana.com/grafana/dashboards/5342
+        ceph-pools:
+          gnetId: 5342
+          revision: 5
+          datasource: Prometheus
         unifi-client-insights:
           gnetId: 11315
           revision: 8
@@ -98,6 +106,11 @@ spec:
         unifi-usg-insights:
           gnetId: 11313
           revision: 8
+          datasource: Prometheus
+        # Ref: https://grafana.com/grafana/dashboards/13665
+        speedtest:
+          gnetId: 13665
+          revision: 1
           datasource: Prometheus
         flux-cluster:
           url: https://raw.githubusercontent.com/fluxcd/flux2/main/manifests/monitoring/grafana/dashboards/cluster.json
@@ -181,10 +194,10 @@ spec:
       annotations:
         traefik.ingress.kubernetes.io/router.entrypoints: "websecure"
       hosts:
-      - "grafana.${SECRET_CLUSTER_DOMAIN}"
+      - "grafana.${SECRET_DOMAIN}"
       tls:
       - hosts:
-        - "grafana.${SECRET_CLUSTER_DOMAIN}"
+        - "grafana.${SECRET_DOMAIN}"
     persistence:
       enabled: true
       storageClassName: "ceph-rbd-sc"

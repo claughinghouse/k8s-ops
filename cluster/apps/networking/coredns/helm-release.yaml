@@ -16,7 +16,6 @@ spec:
         name: coredns-charts
         namespace: flux-system
       interval: 5m
-  timeout: 30m
   values:
     nameOverride: coredns
     fullnameOverride: coredns
@@ -27,16 +26,16 @@ spec:
     serviceType: LoadBalancer
     service:
       externalIPs:
-      - "${CLUSTER_LB_COREDNS}"
+      - "${SVC_COREDNS_ADDRESS}"
       externalTrafficPolicy: Local
     servers:
     - zones:
-      - zone: ${SECRET_CLUSTER_DOMAIN}
+      - zone: ${SECRET_DOMAIN}
         scheme: dns://
       port: 53
       plugins:
       # Enables console logging
-      # - name: log
+      - name: log
       - name: errors
       # Serves a /health endpoint on :8080, required for livenessProbe
       - name: health

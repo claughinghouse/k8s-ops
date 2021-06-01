@@ -16,9 +16,10 @@ spec:
         name: stakater-charts
         namespace: flux-system
       interval: 5m
-  timeout: 30m
   values:
     nameOverride: reloader
     fullnameOverride: reloader
-    # TODO - enable podMonitor
-    # https://github.com/stakater/Reloader/issues/221
+    reloader:
+      podMonitor:
+        enabled: true
+        namespace: kube-system

@@ -16,7 +16,6 @@ spec:
         name: k8s-at-home-charts
         namespace: flux-system
       interval: 5m
-  timeout: 30m
   values:
     image:
       repository: golift/unifi-poller
@@ -29,7 +28,7 @@ spec:
       UP_UNIFI_DEFAULT_USER: "${SECRET_UNIFI_POLLER_USERNAME}"
       UP_UNIFI_DEFAULT_PASS: "${SECRET_UNIFI_POLLER_PASSWORD}"
       UP_UNIFI_DEFAULT_SAVE_SITES: true
-      UP_UNIFI_DEFAULT_SAVE_DPI: true
+      UP_UNIFI_DEFAULT_SAVE_DPI: false
       UP_INFLUXDB_DISABLE: true
       UP_PROMETHEUS_DISABLE: false
       UP_PROMETHEUS_NAMESPACE: "unifipoller"

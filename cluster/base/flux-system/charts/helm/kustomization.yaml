@@ -24,4 +24,5 @@ resources:
 - stakater-charts.yaml
 - traefik-charts.yaml
 - vernemq-charts.yaml
+- victoriametrics-charts.yaml
 - weaveworks-kured-charts.yaml

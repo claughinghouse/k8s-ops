@@ -15,7 +15,6 @@ spec:
         kind: HelmRepository
         name: bitnami-charts
         namespace: flux-system
-  timeout: 30m
   values:
     apiService:
       create: true

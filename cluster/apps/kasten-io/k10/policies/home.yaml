@@ -13,11 +13,10 @@ spec:
           namespace: kasten-io
   frequency: '@hourly'
   retention:
-    daily: 1
-    hourly: 4
-    monthly: 1
-    weekly: 1
-    yearly: 1
+    daily: 14
+    weekly: 0
+    monthly: 0
+    yearly: 0
   selector:
     matchExpressions:
       - key: k10.kasten.io/appNamespace
