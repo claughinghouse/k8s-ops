@@ -1,7 +1,7 @@
 ---
+
 # IP address of node
 ansible_host: "10.1.6.203"
-
 
 # Ansible user to ssh into servers with
 ansible_user: "ubuntu"

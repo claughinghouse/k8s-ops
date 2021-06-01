@@ -1,4 +1,5 @@
 ---
+
 # IP address of node
 ansible_host: "10.1.6.206"
 

@@ -39,10 +39,3 @@
 - include: user.yaml
   tags:
   - user
-
-- include: rsyslog.yaml
-  when:
-  - rsyslog.enabled is defined
-  - rsyslog.enabled
-  tags:
-  - rsyslog
