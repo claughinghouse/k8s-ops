@@ -25,15 +25,15 @@ spec:
       annotations:
         traefik.ingress.kubernetes.io/router.entrypoints: "websecure"
         # external-dns/is-public: "true"
-        # external-dns.alpha.kubernetes.io/target: "gateway.${SECRET_CLUSTER_DOMAIN}"
+        # external-dns.alpha.kubernetes.io/target: "gateway.${SECRET_DOMAIN}"
       hosts:
-        - host: "resilio.${SECRET_CLUSTER_DOMAIN}"
+        - host: "resilio.${SECRET_DOMAIN}"
           paths:
             - path: /
               pathType: Prefix
       tls:
         - hosts:
-            - "resilio.${SECRET_CLUSTER_DOMAIN}"
+            - "resilio.${SECRET_DOMAIN}"
     persistence:
       config:
         enabled: true

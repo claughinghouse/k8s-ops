@@ -7,5 +7,5 @@ metadata:
 spec:
   entryPoints:
   - mqtt
-  rule: "HostSNI(`mqtt.${SECRET_CLUSTER_DOMAIN}`)"
+  rule: "HostSNI(`mqtt.${SECRET_DOMAIN}`)"
   service: vernemq

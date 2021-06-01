@@ -20,22 +20,22 @@ spec:
   values:
     env:
       TZ: "America/New_York"
-      PROXY_DOMAIN: "code-server.${SECRET_CLUSTER_DOMAIN}"
+      PROXY_DOMAIN: "code-server.${SECRET_DOMAIN}"
     ingress:
       enabled: true
       ingressClassName: "traefik"
       annotations:
         traefik.ingress.kubernetes.io/router.entrypoints: "websecure"
         # external-dns/is-public: "true"
-        # external-dns.alpha.kubernetes.io/target: "gateway.${SECRET_CLUSTER_DOMAIN}"
+        # external-dns.alpha.kubernetes.io/target: "gateway.${SECRET_DOMAIN}"
       hosts:
-        - host: "code.${SECRET_CLUSTER_DOMAIN}"
+        - host: "code.${SECRET_DOMAIN}"
           paths:
             - path: /
               pathType: Prefix
       tls:
         - hosts:
-            - "code.${SECRET_CLUSTER_DOMAIN}"
+            - "code.${SECRET_DOMAIN}"
     persistence:
       config:
         enabled: true
