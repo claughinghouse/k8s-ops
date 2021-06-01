@@ -23,7 +23,7 @@ spec:
         - name: vip_arp
           value: "true"
         - name: vip_interface
-          value: "eno1"
+          value: "ens18"
         - name: port
           value: "6443"
         - name: vip_cidr
@@ -35,7 +35,7 @@ spec:
         - name: svc_enable
           value: "false"
         - name: vip_address
-          value: "192.168.42.5"
+          value: "10.1.6.199"
         securityContext:
           capabilities:
             add:

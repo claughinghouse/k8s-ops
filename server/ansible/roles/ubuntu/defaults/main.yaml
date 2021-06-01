@@ -23,6 +23,7 @@ packages:
   - smartmontools
   - socat
   - software-properties-common
+  - tcpdump
   - unattended-upgrades
   - unzip
 
