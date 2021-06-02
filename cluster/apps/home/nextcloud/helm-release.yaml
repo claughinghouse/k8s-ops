@@ -24,8 +24,8 @@ spec:
       ingressClassName: "traefik"
       annotations:
         traefik.ingress.kubernetes.io/router.entrypoints: "websecure"
-        external-dns/is-public: "true"
-        external-dns.alpha.kubernetes.io/target: "ipv4.${SECRET_DOMAIN}"
+        # external-dns/is-public: "false"
+        # external-dns.alpha.kubernetes.io/target: "ipv4.${SECRET_DOMAIN}"
       hosts:
       - host: "nc.${SECRET_DOMAIN}"
         paths:
@@ -38,12 +38,12 @@ spec:
       host: "nc.${SECRET_DOMAIN}"
       username: "${SECRET_NEXTCLOUD_ADMIN_USER}"
       password: "${SECRET_NEXTCLOUD_ADMIN_PASS}"
-      configs:
-        proxy.config.php: |-
-          <?php
-          $CONFIG = array (
-            'trusted_proxies' => array('${NETWORK_K8S_CLUSTER_CIDR}')
-          );
+      # configs:
+      #   proxy.config.php: |-
+      #     <?php
+      #     $CONFIG = array (
+      #       'trusted_proxies' => array('${NETWORK_K8S_CLUSTER_CIDR}')
+      #     );
     persistence:
       enabled: true
       existingClaim: nextcloud-config-v1
