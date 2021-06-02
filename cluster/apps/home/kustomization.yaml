@@ -4,6 +4,7 @@ kind: Kustomization
 resources:
 # - teslamate
 - home-assistant
+- nextcloud
 - resilio-sync
 - syncthing
 - vernemq
