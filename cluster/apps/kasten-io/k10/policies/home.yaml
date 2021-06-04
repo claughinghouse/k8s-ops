@@ -5,7 +5,7 @@ metadata:
   name: home
   namespace: kasten-io
 spec:
-  frequency: "@hourly"
+  frequency: "@daily"
   actions:
     - action: backup
       backupParameters:
@@ -14,23 +14,21 @@ spec:
           name: backblaze-b2
     - action: export
       exportParameters:
-        frequency: "@hourly"
+        frequency: "@daily"
         profile:
           name: backblaze-b2
           namespace: kasten-io
         exportData:
           enabled: true
       retention:
-        hourly: 0
         daily: 0
         weekly: 0
         monthly: 0
         yearly: 0
   retention:
     daily: 7
-    hourly: 6
-    weekly: 1
-    monthly: 0
+    weekly: 4
+    monthly: 3
     yearly: 0
   selector:
     matchExpressions:
