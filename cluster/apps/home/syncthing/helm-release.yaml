@@ -38,3 +38,11 @@ spec:
       tls:
         - hosts:
             - "syncthing.${SECRET_DOMAIN}"
+      volumeMounts:
+        - name: config-file
+          mountPath: /var/syncthing/config/config.xml
+          subPath: config.xml
+      volumes:
+        - name: config-file
+          configMap:
+            name: syncthing-config-file
