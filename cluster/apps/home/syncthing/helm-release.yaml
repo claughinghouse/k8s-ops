@@ -46,3 +46,5 @@ spec:
         - name: config-file
           configMap:
             name: syncthing-config-file
+    podAnnotations:
+      configmap.reloader.stakater.com/reload: "syncthing-config-file"
