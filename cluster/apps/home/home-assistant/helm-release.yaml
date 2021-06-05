@@ -99,3 +99,11 @@ spec:
         memory: 100Mi
       limits:
         memory: 4000Mi
+    postgresql:
+      enabled: true
+      persistence:
+        enabled: true
+        existingClaim: home-assistant-postgresql-v1
+      postgresqlUsername: home-assistant
+      postgresqlDatabase: home-assistant
+      postgresqlPassword: ${SECRET_HASS_POSTGRES_PASSWORD}
