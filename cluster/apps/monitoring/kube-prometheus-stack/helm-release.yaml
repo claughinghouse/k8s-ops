@@ -40,10 +40,6 @@ spec:
                 {{ range .Labels.SortedPairs }} • *{{ .Name }}:* `{{ .Value }}`
                 {{ end }}
               {{ end }}
-        - name: 'webhook'
-          webhook_configs:
-          - url: "http://192.168.1.35:9000/hooks/webhook-ups"
-            send_resolved: false
         route:
           group_by: ['alertname', 'job']
           group_wait: 30s
@@ -58,10 +54,6 @@ spec:
             match_re:
               # severity: critical|warning
               severity: critical
-            continue: true
-          - receiver: 'webhook'
-            match:
-              alertname: UPS15MinutesRemaining
             continue: true
         inhibit_rules:
         - source_match:

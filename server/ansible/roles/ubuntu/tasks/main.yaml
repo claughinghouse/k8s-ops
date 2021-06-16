@@ -1,9 +1,5 @@
 ---
 
-- include: host.yaml
-  tags:
-  - host
-
 - include: locale.yaml
   tags:
   - locale
@@ -12,17 +8,9 @@
   tags:
   - packages
 
-- include: power-button.yaml
-  tags:
-  - power-button
-
 - include: kernel.yaml
   tags:
   - kernel
-
-- include: boot.yaml
-  tags:
-  - boot
 
 - include: network.yaml
   tags:

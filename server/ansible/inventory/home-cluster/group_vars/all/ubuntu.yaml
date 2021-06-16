@@ -3,17 +3,6 @@
 # Timezone for the servers
 timezone: "America/New_York"
 
-# # Set custom ntp servers
-# ntp_servers:
-#   primary:
-#   - "time.cloudflare.com"
-#   - "time.google.com"
-#   fallback:
-#   - "0.us.pool.ntp.org"
-#   - "1.us.pool.ntp.org"
-#   - "2.us.pool.ntp.org"
-#   - "3.us.pool.ntp.org"
-
 # Additional ssh public keys to add to the nodes
 ssh_authorized_keys:
   - "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIJHiKbjWHf/hfmD5ArZek3BnKaLf56L3dBqovisvlABw"
