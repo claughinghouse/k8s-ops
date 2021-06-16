@@ -21,6 +21,7 @@ spec:
   actions:
   - action: backup
     backupParameters:
+      filters: {}
       profile:
         name: backblaze-b2
         namespace: kasten-io
