@@ -2,81 +2,45 @@
 apiVersion: helm.toolkit.fluxcd.io/v2beta1
 kind: HelmRelease
 metadata:
-  name: coredns
+  name: internal-dns
   namespace: networking
 spec:
   interval: 5m
   chart:
     spec:
-      # renovate: registryUrl=https://coredns.github.io/helm
-      chart: coredns
-      version: 1.15.1
+      # renovate: registryUrl=https://charts.bitnami.com/bitnami
+      chart: external-dns
+      version: 5.1.1
       sourceRef:
         kind: HelmRepository
-        name: coredns-charts
+        name: bitnami-charts
         namespace: flux-system
       interval: 5m
   values:
-    nameOverride: coredns
-    fullnameOverride: coredns
-    rbac:
-      create: true
-    replicaCount: 3
-    isClusterService: false
-    serviceType: LoadBalancer
-    service:
-      externalIPs:
-      - "${SVC_COREDNS_ADDRESS}"
-      externalTrafficPolicy: Local
-    servers:
-    - zones:
-      - zone: ${SECRET_DOMAIN}
-        scheme: dns://
-      port: 53
-      plugins:
-      # Enables console logging
-      - name: log
-      - name: errors
-      # Serves a /health endpoint on :8080, required for livenessProbe
-      - name: health
-        configBlock: |-
-          lameduck 5s
-      # Serves a /ready endpoint on :8181, required for readinessProbe
-      - name: ready
-      # Allow automatic reloading of Corefile
-      - name: reload
-      # Detect forwarding loops
-      - name: loop
-      # Static hosts
-      - name: hosts
-        configBlock: |-
-          fallthrough
-      # Set up local resolution
-      - name: etcd
-        configBlock: |-
-          stubzones
-          path /skydns
-          endpoint https://10.1.6.201:2379 https://10.1.6.202:2379 https://10.1.6.203:2379
-          tls /etc/coredns/coredns-etcd/cert.pem /etc/coredns/coredns-etcd/key.pem /etc/coredns/coredns-etcd/ca.crt
-      # Set up cache
-      - name: cache
-        parameters: 30
-    extraSecrets:
-    - name: coredns-etcd
-      mountPath: /etc/coredns/coredns-etcd
-    affinity:
-      podAntiAffinity:
-        requiredDuringSchedulingIgnoredDuringExecution:
-        - labelSelector:
-            matchExpressions:
-            - key: app.kubernetes.io/name
-              operator: In
-              values:
-              - coredns
-          topologyKey: "kubernetes.io/hostname"
+    nameOverride: internal-dns
+    # interval: "5m"
+    logLevel: debug
+    sources:
+    - crd
+    - service
+    - ingress
+    provider: coredns
+    coredns:
+      etcdEndpoints: "https://10.1.6.201:2379,https://10.1.6.202:2379,https://10.1.6.203:2379"
+      etcdTLS:
+        enabled: true
+        secretName: coredns-etcd
+    policy: sync
+    txtPrefix: "k8s."
+    domainFilters:
+    - "${SECRET_DOMAIN}"
+    crd:
+      create: false
+      apiversion: externaldns.k8s.io/v1alpha1
+      kind: DNSEndpoint
     resources:
       requests:
-        memory: 200Mi
-        cpu: 50m
+        memory: 100Mi
+        cpu: 25m
       limits:
-        memory: 500Mi
+        memory: 250Mi
