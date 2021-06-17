@@ -50,6 +50,10 @@ spec:
       # Static hosts
       - name: hosts
         configBlock: |-
+          fallthrough
+      # Set up local resolution
+      - name: etcd
+        configBlock: |-
           stubzones
           path /skydns
           endpoint https://10.1.6.201:2379 https://10.1.6.202:2379 https://10.1.6.203:2379
