@@ -5,6 +5,7 @@ metadata:
   name: home
   namespace: kasten-io
 spec:
+  comment: ""
   frequency: "@daily"
   actions:
     - action: backup
@@ -15,15 +16,25 @@ spec:
     - action: export
       exportParameters:
         frequency: "@daily"
+        migrationToken:
+          name: ""
+          namespace: ""
         profile:
           name: backblaze-b2
           namespace: kasten-io
+        receiveString: ""
         exportData:
           enabled: true
       retention:
-        daily: 14
+        daily: 0
+        weekly: 0
+        monthly: 0
+        yearly: 0
   retention:
-    daily: 14
+    daily: 7
+    weekly: 2
+    monthly: 0
+    yearly: 0
   selector:
     matchExpressions:
       - key: k10.kasten.io/appNamespace
