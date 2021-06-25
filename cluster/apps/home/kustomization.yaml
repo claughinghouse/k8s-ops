@@ -5,6 +5,7 @@ resources:
 # - teslamate
 - home-assistant
 - mealie
+- paperless
 - resilio-sync
 - syncthing
 - vernemq
